@@ -1,0 +1,1429 @@
+{
+  "openapi": "3.0.0",
+  "paths": {
+    "/api/stats/{pool}": {
+      "get": {
+        "tags": [
+          "stats"
+        ],
+        "summary": "Get pool Stats",
+        "description": "",
+        "operationId": "getStats",
+        "parameters": [
+          {
+            "name": "pool",
+            "in": "path",
+            "description": "Pool's shortname",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/ArrayOfPools"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns a list of all Pool's Stats",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StatsReturnModel"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/StatsReturnModel"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionModel"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionModel"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Access denied",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionModel"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionModel"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionModel"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionModel"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/dashboard/{pool}": {
+      "get": {
+        "tags": [
+          "dashboard"
+        ],
+        "summary": "Get pool Dashboard",
+        "description": "",
+        "operationId": "getDashboard",
+        "parameters": [
+          {
+            "name": "pool",
+            "in": "path",
+            "description": "Pool's shortname",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/ArrayOfPools"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns a list of all Pool's Dashboard",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DashboardReturnModel"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/DashboardReturnModel"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionModel"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionModel"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Access denied",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionModel"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionModel"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionModel"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionModel"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/blocks/{pool}": {
+      "get": {
+        "tags": [
+          "blocks"
+        ],
+        "summary": "Get pool Blocks",
+        "description": "",
+        "operationId": "getBlocks",
+        "parameters": [
+          {
+            "name": "pool",
+            "in": "path",
+            "description": "Pool's shortname",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/ArrayOfPools"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns Pool's Blocks",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BlockMainReturnModel"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/BlockMainReturnModel"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionModel"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionModel"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Access denied",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionModel"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionModel"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionModel"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionModel"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/payments/{pool}": {
+      "get": {
+        "tags": [
+          "payments"
+        ],
+        "summary": "Get pool Payments",
+        "description": "",
+        "operationId": "getPayments",
+        "parameters": [
+          {
+            "name": "pool",
+            "in": "path",
+            "description": "Pool's shortname",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/ArrayOfPools"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns Pool's Payments",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PaymentMainReturnModel"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/PaymentMainReturnModel"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionModel"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionModel"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Access denied",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionModel"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionModel"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionModel"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionModel"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/miners/{pool}": {
+      "get": {
+        "tags": [
+          "miners"
+        ],
+        "summary": "Get pool Miners",
+        "description": "",
+        "operationId": "getMiners",
+        "parameters": [
+          {
+            "name": "pool",
+            "in": "path",
+            "description": "Pool's shortname",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/ArrayOfPools"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns Pool's Miners",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MinerMainReturnModel"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/MinerMainReturnModel"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionModel"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionModel"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Access denied",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionModel"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionModel"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionModel"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionModel"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/miner/{pool}/{walletid}": {
+      "get": {
+        "tags": [
+          "accounts"
+        ],
+        "summary": "View an Account",
+        "description": "",
+        "operationId": "getStats",
+        "parameters": [
+          {
+            "name": "pool",
+            "in": "path",
+            "description": "Pool's shortname",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/ArrayOfPools"
+            }
+          },
+          {
+            "name": "walletid",
+            "in": "path",
+            "description": "id of the wallet",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns the account info",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AccountMainReturnModel"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/AccountMainReturnModel"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionModel"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionModel"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Access denied",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionModel"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionModel"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionModel"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionModel"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ArrayOfPools": {
+       "type": "string",
+       "enum": [btg, btgsolo, xsg, xsgsolo, btcz, btczsolo, bth, bthsolo, zel, zelsolo, zcl, zclsolo, yec, yecsolo, zec, zecsolo, zen, zensolo, kmd, kmdsolo, eth, ethsolo, etc, etcsolo, clo, closolo, moac, moacsolo, exp, expsolo]
+      },
+      "ExceptionModel": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "message": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          }
+        },
+        "xml": {
+          "name": "ExceptionModel"
+        }
+      },
+      "DashboardReturnModel": {
+        "type": "object",
+        "properties": {
+          "dashboard": {
+            "type": "object",
+            "properties": {
+              "poolCharts": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/PoolChartsModel"
+                }
+              }
+            }
+          },
+          "pool": {
+           "$ref": "#/components/schemas/StatsReturnModel"
+          }
+        },
+        "xml": {
+          "name": "DashboardReturnModel"
+        }
+      },
+      "BlockMainReturnModel": {
+        "type": "object",
+        "properties": {
+          "blocks": {
+           "$ref": "#/components/schemas/BlockReturnModel"
+          },
+          "pool": {
+           "$ref": "#/components/schemas/StatsReturnModel"
+          }
+        },
+        "xml": {
+          "name": "BlockMainReturnModel"
+        }
+      },
+      "PaymentMainReturnModel": {
+        "type": "object",
+        "properties": {
+          "payment": {
+           "$ref": "#/components/schemas/PaymentReturnModel"
+          },
+          "pool": {
+           "$ref": "#/components/schemas/StatsReturnModel"
+          }
+        },
+        "xml": {
+          "name": "PaymentMainReturnModel"
+        }
+      },
+      "MinerMainReturnModel": {
+        "type": "object",
+        "properties": {
+          "miner": {
+           "$ref": "#/components/schemas/MinerReturnModel"
+          },
+          "pool": {
+           "$ref": "#/components/schemas/StatsReturnModel"
+          }
+        },
+        "xml": {
+          "name": "MinerMainReturnModel"
+        }
+      },      
+      "AccountMainReturnModel": {
+        "type": "object",
+        "properties": {
+          "miner": {
+           "$ref": "#/components/schemas/AccountReturnModel"
+          },
+          "pool": {
+           "$ref": "#/components/schemas/StatsReturnModel"
+          }
+        },
+        "xml": {
+          "name": "AccountMainReturnModel"
+        }
+      },
+      "StatsReturnModel": {
+        "type": "object",
+        "properties": {
+          "now": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "nShares": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "minersTotal": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "maturedTotal": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "poolHashrate": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "poolHashrateStr": {
+            "type": "string"
+          },
+          "poolLuck": {
+            "type": "number",
+            "format": "float"
+          },
+          "networkDiff": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "blocksCandidatesTotal": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "blocksImmatureTotal": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "blocksMaturedTotal": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "networkBlock": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "networkSpeed": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "networkSpeedStr": {
+            "type": "string"
+          },
+          "roundShares": {
+            "type": "string"
+          },
+          "coinSymbol": {
+            "type": "string"
+          },
+          "coinAlgorithm": {
+            "type": "string"
+          },
+          "coinReward": {
+            "type": "number",
+            "format": "float"
+          },
+          "coinBlocktime": {
+            "type": "number",
+            "format": "float"
+          },
+          "coinConfirmations": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "coinUnit": {
+            "type": "string"
+          },
+          "coinExplorer": {
+            "type": "string"
+          },
+          "coinExplorerAddr": {
+            "type": "string"
+          },
+          "coinExplorerBlock": {
+            "type": "string"
+          },
+          "coinExplorerTx": {
+            "type": "string"
+          },
+          "coinMul": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "coinMulR": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "coinPriceBtc": {
+            "type": "string"
+          },
+          "coinPriceUsd": {
+            "type": "string"
+          },
+          "coinPercentChange": {
+            "type": "string"
+          }
+        },
+        "xml": {
+          "name": "StatsReturnModel"
+        }
+      },
+      "PaymentReturnModel": {
+        "type": "object",
+        "properties": {
+          "payments": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PaymentsModel"
+            }
+          },
+          "paidTotal": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "paymentsTotal": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "xml": {
+          "name": "PaymentReturnModel"
+        }
+      },
+      "WorkerGroupModel": {
+        "type": "object",
+        "properties": {
+          "startedAt": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "lastBeat": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "hr2": {
+            "type": "number",
+            "format": "float"
+          },
+          "hr": {
+            "type": "number",
+            "format": "float"
+          },
+          "offline": {
+            "type": "boolean",
+            "default": false
+          }
+        }
+      },
+      "AccountReturnModel": {
+        "type": "object",
+        "properties": {
+          "workersTotal": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "workersOnline": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "workersOffline": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "workers": {
+            "$ref": "#/components/schemas/WorkerModel"
+          },
+          "curHashrate": {
+            "type": "number",
+            "format": "float"
+          },
+          "curHashrateStr": {
+            "type": "string"
+          },
+          "avgHashrate": {
+            "type": "number",
+            "format": "float"
+          },
+          "avgHashrateStr": {
+            "type": "string"
+          },
+          "coinsPerDay": {
+            "type": "number",
+            "format": "float"
+          },
+          "totalBlocksFound": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "lastShare": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "lastShareDiff": {
+            "type": "number",
+            "format": "float"
+          },
+          "paymentsTotal": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "payments": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PaymentModel"
+            }
+          },
+          "immatureBalance": {
+            "type": "number",
+            "format": "float"
+          },
+          "pendingBalance": {
+            "type": "number",
+            "format": "float"
+          },
+          "paidBalance": {
+            "type": "number",
+            "format": "float"
+          },
+          "soloLuck": {
+            "type": "number",
+            "format": "float"
+          },
+          "roundShares": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "yourShareRate": {
+            "type": "number",
+            "format": "float"
+          },
+          "24hreward": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "rewards": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/RewardsModel"
+            }
+          },
+          "sumrewards": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SumrewardsModel"
+            }
+          },
+          "rewardIfFoundNow": {
+            "type": "number",
+            "format": "float"
+          },
+          "blocks24hReward": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "blocksRewards": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BlockRewardsModel"
+            }
+          },
+          "blocksSumRewards": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BlockSumrewardsModel"
+            }
+          },
+          "blockAvgReward": {
+            "type": "number",
+            "format": "float"
+          },
+          "minerCharts": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/MinerChartsModel"
+            }
+          }
+        },
+        "xml": {
+          "name": "AccountReturnModel"
+        }
+      },
+      "PaymentModel": {
+        "type": "object",
+        "properties": {
+          "timestamp": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "amount": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "tx": {
+            "type": "string"
+          }
+        }
+      },
+      "StatsModel": {
+        "type": "object",
+        "properties": {
+          "balance": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "blocksFound": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "immature": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "lastShare": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "paid": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "pending": {
+            "type": "boolean",
+            "default": false
+          }
+        }
+      },
+      "MinerReturnModel": {
+        "type": "object",
+        "properties": {
+          "now": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "miners": {
+            "$ref": "#/components/schemas/MinerModel"
+          },
+          "minersTotal": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "hashrate": {
+            "type": "number",
+            "format": "float"
+          }
+        },
+        "xml": {
+          "name": "MinerReturnModel"
+        }
+      },
+      "MinerModel": {
+        "type": "object",
+        "properties": {
+          "minerUid": {
+            "$ref": "#/components/schemas/MinerUidModel"
+          }
+        }
+      },
+      "LuckModel": {
+        "type": "object",
+        "properties": {
+          "luckNumber": {
+            "$ref": "#/components/schemas/LuckNumberModel"
+          }
+        }
+      },
+      "RewardsModel": {
+        "type": "object",
+        "properties": {
+          "timestamp": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "blockheight": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "blockhash": {
+            "type": "string"
+          },
+          "reward": {
+            "type": "number",
+            "format": "float"
+          },
+          "percent": {
+            "type": "number",
+            "format": "float"
+          },
+          "immature": {
+            "type": "boolean",
+            "default": false
+          },
+          "uncle": {
+            "type": "boolean",
+            "default": false
+          },
+          "currentLuck": {
+            "type": "number",
+            "format": "float"
+          }
+        }
+      },
+      "BlockRewardsModel": {
+        "type": "object",
+        "properties": {
+          "timestamp": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "blockheight": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "blockamount": {
+            "type": "number",
+            "format": "float"
+          },
+          "variance": {
+            "type": "number",
+            "format": "float"
+          }
+        }
+      },
+      "SumrewardsModel": {
+        "type": "object",
+        "properties": {
+          "reward": {
+            "type": "number",
+            "format": "float"
+          },
+          "offset": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "name": {
+            "type": "string"
+          },
+          "invervalfrom": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "invervalto": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "BlockSumrewardsModel": {
+        "type": "object",
+        "properties": {
+          "reward": {
+            "type": "number",
+            "format": "float"
+          },
+          "variance": {
+            "type": "number",
+            "format": "float"
+          },
+          "offset": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "name": {
+            "type": "string"
+          },
+          "invervalfrom": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "invervalto": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "CandidatesModel": {
+        "type": "object",
+        "properties": {
+          "height": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "timestamp": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "difficulty": {
+            "type": "number",
+            "format": "float"
+          },
+          "shares": {
+            "type": "number",
+            "format": "float"
+          },
+          "uncle": {
+            "type": "boolean",
+            "default": false
+          },
+          "uncleHeight": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "orphan": {
+            "type": "boolean",
+            "default": false
+          },
+          "hash": {
+            "type": "string"
+          },
+          "minedBy": {
+            "type": "string"
+          },
+          "portDiff": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "shareDiff": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "soloShares": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "reward": {
+            "type": "string"
+          }
+        }
+      },
+      "ImmaturedModel": {
+        "type": "object",
+        "properties": {
+          "height": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "timestamp": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "difficulty": {
+            "type": "number",
+            "format": "float"
+          },
+          "shares": {
+            "type": "number",
+            "format": "float"
+          },
+          "uncle": {
+            "type": "boolean",
+            "default": false
+          },
+          "uncleHeight": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "orphan": {
+            "type": "boolean",
+            "default": false
+          },
+          "hash": {
+            "type": "string"
+          },
+          "minedBy": {
+            "type": "string"
+          },
+          "portDiff": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "shareDiff": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "soloShares": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "reward": {
+            "type": "string"
+          }
+        }
+      },
+      "MaturedModel": {
+        "type": "object",
+        "properties": {
+          "height": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "timestamp": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "difficulty": {
+            "type": "number",
+            "format": "float"
+          },
+          "shares": {
+            "type": "number",
+            "format": "float"
+          },
+          "uncle": {
+            "type": "boolean",
+            "default": false
+          },
+          "uncleHeight": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "orphan": {
+            "type": "boolean",
+            "default": false
+          },
+          "hash": {
+            "type": "string"
+          },
+          "minedBy": {
+            "type": "string"
+          },
+          "portDiff": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "shareDiff": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "soloShares": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "reward": {
+            "type": "string"
+          }
+        }
+      },
+      "BlockReturnModel": {
+        "type": "object",
+        "properties": {
+          "candidates": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CandidatesModel"
+            }
+          },
+          "candidatesTotal": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "immature": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ImmaturedModel"
+            }
+          },
+          "immatureTotal": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "luck": {
+            "$ref": "#/components/schemas/LuckModel"
+          },
+          "matured": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/MaturedModel"
+            }
+          },
+          "maturedTotal": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "avgReward": {
+            "type": "number",
+            "format": "float"
+          },
+          "lastBlockFound": {
+            "type": "integer",
+            "format": "int32"
+          },
+        },
+        "xml": {
+          "name": "BlockReturnModel"
+        }
+      },
+      "PoolChartsModel": {
+        "type": "object",
+        "properties": {
+          "x": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "timeFormat": {
+            "type": "string"
+          },
+          "y": {
+            "type": "number",
+            "format": "float"
+          },
+          "d": {
+            "type": "number",
+            "format": "float"
+          }
+        }
+      },      
+      "MinerChartsModel": {
+        "type": "object",
+        "properties": {
+          "x": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "timeFormat": {
+            "type": "string"
+          },
+          "minerHash": {
+            "type": "number",
+            "format": "float"
+          },
+          "minerLargeHash": {
+            "type": "number",
+            "format": "float"
+          },
+          "workerOnline": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "MinerUidModel": {
+        "type": "object",
+        "properties": {
+          "hr": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "lastBeat": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "startedAt": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "offline": {
+            "type": "boolean",
+            "default": false
+          }
+        }
+      },
+      "PaymentsModel": {
+        "type": "object",
+        "properties": {
+          "address": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "amount": {
+            "type": "number",
+            "format": "float"
+          },
+          "timestamp": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "tx": {
+            "type": "string"
+          }
+        }
+      },
+      "WorkerModel": {
+        "type": "object",
+        "properties": {
+          "workerGroup": {
+            "$ref": "#/components/schemas/WorkerGroupModel"
+          }
+        }
+      },
+      "LuckNumberModel": {
+        "type": "object",
+        "properties": {
+          "luck": {
+            "type": "number",
+            "format": "float"
+          },
+          "lucky": {
+            "type": "boolean",
+            "default": false
+          },
+          "uncleRate": {
+            "type": "number",
+            "format": "float"
+          },
+          "orphanRate": {
+            "type": "number",
+            "format": "float"
+          }
+        }
+      }
+    }
+  }
+}
