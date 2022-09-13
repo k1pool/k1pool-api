@@ -513,7 +513,7 @@
     "schemas": {
       "ArrayOfPools": {
        "type": "string",
-       "enum": [btg, btgsolo, xsg, xsgsolo, btcz, btczsolo, zel, zelsolo, yec, yecsolo, zec, zecsolo, zen, zensolo, kmd, kmdsolo, eth, ethsolo, etc, etcsolo, clo, closolo, moac, moacsolo, exp, expsolo, etp, etpsolo, rvn, rvnsolo]
+       "enum": [btg, btgsolo, btcz, btczsolo, zel, zelsolo, zec, zecsolo, zen, zensolo, kmd, kmdsolo, eth, ethsolo, etc, etcsolo, clo, closolo, moac, moacsolo, exp, expsolo, etp, etpsolo, rvn, rvnsolo, neox, neoxsolo, erg, ergsolo]
       },
       "ExceptionModel": {
         "type": "object",
